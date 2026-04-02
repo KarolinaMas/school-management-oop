@@ -11,5 +11,11 @@ namespace SchoolManagement.Models
         {
             return "Staff";
         }
+
+        public override string GetProfile()
+        {
+            return $"Name: {FirstName}\nLast name: {LastName}\nBirthday: {Birthday}\nEmail: {Email}\n"
+                + $"Employee id: {EmployeeId}\nDepartment: {Department}\nSalary: {Salary}\nHire date: {HireDate}";
+        }
     }
 }

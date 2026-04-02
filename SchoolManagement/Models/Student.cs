@@ -11,5 +11,11 @@ namespace SchoolManagement.Models
         {
             return "Student.";
         }
+
+        public override string GetProfile()
+        {
+            return $"Name: {FirstName}\nLast name: {LastName}\nBirthday: {Birthday}\nEmail: {Email}\n"
+                + $"Student id: {StudentId}\nProgram: {Program}\nGPA: {GPA}\nEnrollment year: {EnrollmentYear}";
+        }
     }
 }

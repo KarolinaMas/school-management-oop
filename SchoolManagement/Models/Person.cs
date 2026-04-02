@@ -8,5 +8,7 @@ namespace SchoolManagement.Models
         public string Email { get; set; }
 
         public abstract string GetRole();
+
+        public abstract string GetProfile();
     }
 }
