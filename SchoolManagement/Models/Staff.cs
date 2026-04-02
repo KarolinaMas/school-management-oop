@@ -3,7 +3,7 @@ namespace SchoolManagement.Models
     public class Staff : Person
     {
         public int EmployeeId { get; set; }
-        public string Department { get; set; }
+        public string Department { get; set; } = string.Empty;
         public double Salary { get; set; }
         public DateOnly HireDate { get; set; }
 
