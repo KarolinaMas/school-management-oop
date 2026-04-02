@@ -10,5 +10,10 @@ namespace SchoolManagement.Models
         public abstract string GetRole();
 
         public abstract string GetProfile();
+
+        public virtual string GetContactInfo()
+        {
+            return Email;
+        }
     }
 }

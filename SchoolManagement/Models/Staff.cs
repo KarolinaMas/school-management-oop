@@ -17,5 +17,10 @@ namespace SchoolManagement.Models
             return $"Name: {FirstName}\nLast name: {LastName}\nBirthday: {Birthday}\nEmail: {Email}\n"
                 + $"Employee id: {EmployeeId}\nDepartment: {Department}\nSalary: {Salary}\nHire date: {HireDate}";
         }
+
+        public override string GetContactInfo()
+        {
+            return $"Email: {base.GetContactInfo()}, department: {Department}"; // base.GetContactInfo() grazins Email property
+        }
     }
 }
