@@ -16,5 +16,20 @@ namespace SchoolManagement.Models
             return base.GetProfile()
                 + $"\nMajor: {Major}\nMinor: {Minor}\nTotal Credits: {TotalCredits}";
         }
+
+        public override string GetAcademicStanding()
+        {
+            string gpaStanding = base.GetAcademicStanding();
+
+            string yearStanding = TotalCredits switch
+            {
+                < 30 => "Freshman",
+                < 60 => "Sophomore",
+                < 90 => "Junior",
+                _ => "Senior",
+            };
+
+            return $"{yearStanding}, {gpaStanding}";
+        }
     }
 }
