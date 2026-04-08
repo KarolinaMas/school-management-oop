@@ -13,7 +13,7 @@ namespace SchoolManagement.Models
 
         public override string GetProfile()
         {
-            return $"{base.GetProfile()}\n Thesis tilte: {ThesisTitle}\n Supervisor: {Supervisor}\n Thesis Submitted: {ThesisSubmitted}";
+            return $"{base.GetProfile()}\nThesis tilte: {ThesisTitle}\nSupervisor: {Supervisor}\nThesis Submitted: {ThesisSubmitted}";
         }
 
         public override string GetAcademicStanding()
