@@ -22,5 +22,27 @@ namespace SchoolManagement.Models
         {
             return $"Email: {base.GetContactInfo()}, department: {Department}"; // base.GetContactInfo() grazins Email property
         }
+
+        public virtual decimal CalculateAnnualBonus()
+        {
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            var yearDiff = today.Year - HireDate.Year;
+
+            if (
+                today.Month < HireDate.Month
+                || today.Month == HireDate.Month && today.Day < HireDate.Day
+            )
+            {
+                yearDiff--;
+            }
+
+            var totalYearsForBonus = yearDiff / 5;
+
+            decimal totalBonusPercent = totalYearsForBonus * 5;
+
+            decimal result = (decimal)Salary * totalBonusPercent / 100m;
+
+            return result;
+        }
     }
 }
