@@ -4,7 +4,7 @@ namespace SchoolManagement.Models
     {
         public int EmployeeId { get; set; }
         public string Department { get; set; } = string.Empty;
-        public double Salary { get; set; }
+        public decimal Salary { get; set; }
         public DateOnly HireDate { get; set; }
 
         public override string GetRole()
@@ -20,7 +20,7 @@ namespace SchoolManagement.Models
 
         public override string GetContactInfo()
         {
-            return $"Email: {base.GetContactInfo()}, department: {Department}"; // base.GetContactInfo() grazins Email property
+            return $"{base.GetContactInfo()}, Department: {Department}";
         }
 
         public virtual decimal CalculateAnnualBonus()
@@ -40,9 +40,12 @@ namespace SchoolManagement.Models
 
             decimal totalBonusPercent = totalYearsForBonus * 5;
 
-            decimal result = (decimal)Salary * totalBonusPercent / 100m;
+            return CalculateBonusAmount(totalBonusPercent);
+        }
 
-            return result;
+        protected decimal CalculateBonusAmount(decimal percentIndex)
+        {
+            return Salary * percentIndex / 100m;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace SchoolManagement.Models
 
             if (TeachingRating >= 4.5)
             {
-                return result + (decimal)Salary * 10m / 100m;
+                return result + CalculateBonusAmount(10m);
             }
             else
             {

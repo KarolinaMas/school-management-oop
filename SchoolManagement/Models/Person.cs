@@ -13,7 +13,7 @@ namespace SchoolManagement.Models
 
         public virtual string GetContactInfo()
         {
-            return Email;
+            return $"Email: {Email}";
         }
     }
 }
