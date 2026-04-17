@@ -7,6 +7,12 @@ namespace SchoolManagement.Models
         public double GPA { get; set; }
         public int EnrollmentYear { get; set; }
 
+        public Student(int studentId, string firstName, string lastName)
+            : base(firstName, lastName)
+        {
+            StudentId = studentId;
+        }
+
         public override string GetRole()
         {
             return "Student.";

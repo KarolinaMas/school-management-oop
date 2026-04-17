@@ -7,6 +7,12 @@ namespace SchoolManagement.Models
         public DateOnly Birthday { get; set; }
         public string Email { get; set; } = string.Empty;
 
+        public Person(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
         public abstract string GetRole();
 
         public abstract string GetProfile();

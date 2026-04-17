@@ -6,6 +6,12 @@ namespace SchoolManagement.Models
         public string Minor { get; set; } = string.Empty;
         public int TotalCredits { get; set; }
 
+        public UndergraduateStudent(int studentId, string firstName, string lastName, string major)
+            : base(studentId, firstName, lastName)
+        {
+            Major = major;
+        }
+
         public override string GetRole()
         {
             return "Undergraduate student";
