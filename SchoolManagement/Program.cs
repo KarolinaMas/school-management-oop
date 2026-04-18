@@ -15,10 +15,48 @@ namespace MyApp
                 new Administrator(5, "Ona", "Onaite", "23B"),
             };
 
-            foreach (var person in schoolList)
+            var staffList1 = new List<Staff>()
+            {
+                new Teacher(4, "Albert", "Einstein", "Physics")
+                {
+                    Salary = 1600m,
+                    HireDate = new DateOnly(2022, 2, 2),
+                },
+                new HeadOfDepartment(7, "Paulius", "Paulaitis", "Biology", 6)
+                {
+                    Salary = 2500m,
+                    HireDate = new DateOnly(2016, 2, 2),
+                },
+                new Administrator(8, "Elton", "John", "25A")
+                {
+                    Salary = 3000m,
+                    HireDate = new DateOnly(2021, 2, 2),
+                },
+            };
+
+            // GetPersonInfo(schoolList);
+
+            GetStaffInfo(staffList1);
+        }
+
+        static void GetPersonInfo(List<Person> list)
+        {
+            foreach (var person in list)
             {
                 Console.WriteLine("Person profile info:");
                 Console.WriteLine(person.GetProfile());
+                Console.WriteLine("//////////////////////");
+            }
+        }
+
+        static void GetStaffInfo(List<Staff> staffList)
+        {
+            foreach (var member in staffList)
+            {
+                Console.WriteLine("Staff member info:");
+                Console.WriteLine($"First name: {member.FirstName}");
+                Console.WriteLine($"Role: {member.GetRole()}");
+                Console.WriteLine($"Anual bonus: {member.CalculateAnnualBonus()}");
                 Console.WriteLine("//////////////////////");
             }
         }
