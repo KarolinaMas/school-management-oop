@@ -6,6 +6,12 @@ namespace SchoolManagement.Models
         public string Supervisor { get; set; } = string.Empty;
         public bool ThesisSubmitted { get; set; }
 
+        public GraduateStudent(int studentId, string firstName, string lastName, string thesisTitle)
+            : base(studentId, firstName, lastName)
+        {
+            ThesisTitle = thesisTitle;
+        }
+
         public override string GetRole()
         {
             return "Graduate student";

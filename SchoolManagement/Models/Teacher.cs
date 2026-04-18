@@ -6,6 +6,12 @@ namespace SchoolManagement.Models
         public List<string> CoursesTaught { get; set; } = new();
         public double TeachingRating { get; set; }
 
+        public Teacher(int employeeId, string firstName, string lastName, string subjectArea)
+            : base(employeeId, firstName, lastName)
+        {
+            SubjectArea = subjectArea;
+        }
+
         public string GetListValues()
         {
             return string.Join(", ", CoursesTaught);

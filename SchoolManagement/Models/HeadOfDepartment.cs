@@ -10,6 +10,18 @@ namespace SchoolManagement.Models
             return "Head of department";
         }
 
+        public HeadOfDepartment(
+            int employeeId,
+            string firstName,
+            string lastName,
+            string subjectArea,
+            int teamSize
+        )
+            : base(employeeId, firstName, lastName, subjectArea)
+        {
+            TeamSize = teamSize;
+        }
+
         public override string GetProfile()
         {
             return $"{base.GetProfile()}\nTeam size: {TeamSize}\nDepartment vision: {DepartmentVision}";

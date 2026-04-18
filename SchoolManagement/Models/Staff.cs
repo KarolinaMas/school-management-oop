@@ -7,6 +7,12 @@ namespace SchoolManagement.Models
         public decimal Salary { get; set; }
         public DateOnly HireDate { get; set; }
 
+        public Staff(int employeeId, string firstName, string lastName)
+            : base(firstName, lastName)
+        {
+            EmployeeId = employeeId;
+        }
+
         public override string GetRole()
         {
             return "Staff";
