@@ -24,7 +24,7 @@ namespace SchoolManagement.Models
 
         public override string GetProfile()
         {
-            return $"{base.GetProfile()}\nTeam size: {TeamSize}\nDepartment vision: {DepartmentVision}";
+            return $"{base.GetProfile()}\nTeam size: {TeamSize}\nDepartment vision: {(string.IsNullOrWhiteSpace(DepartmentVision) ? "N/A" : DepartmentVision)}";
         }
 
         public override string GetContactInfo()

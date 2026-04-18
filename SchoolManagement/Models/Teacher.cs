@@ -24,7 +24,7 @@ namespace SchoolManagement.Models
 
         public override string GetProfile()
         {
-            return $"{base.GetProfile()}\nSubject area: {SubjectArea}\nCourses Taught: {GetListValues()}\nTeaching rating: {TeachingRating}";
+            return $"{base.GetProfile()}\nSubject area: {(string.IsNullOrWhiteSpace(SubjectArea) ? "N/A" : SubjectArea)}\nCourses Taught: {(CoursesTaught.Count == 0 ? "N/A" : GetListValues())}\nTeaching rating: {(TeachingRating == default ? "N/A" : TeachingRating)}";
         }
 
         public override decimal CalculateAnnualBonus()
