@@ -34,9 +34,21 @@ namespace MyApp
                 },
             };
 
+            var studentList = new List<Student>()
+            {
+                new UndergraduateStudent(9, "Jonas", "Jonaitis", "AI engineering")
+                {
+                    GPA = 7,
+                    TotalCredits = 60,
+                },
+                new GraduateStudent(10, "Jessica", "Shy", "Music industry") { GPA = 9 },
+            };
+
             // GetPersonInfo(schoolList);
 
-            GetStaffInfo(staffList1);
+            // GetStaffInfo(staffList1);
+
+            // GetStudentInfo(studentList);
         }
 
         static void GetPersonInfo(List<Person> list)
@@ -57,6 +69,18 @@ namespace MyApp
                 Console.WriteLine($"First name: {member.FirstName}");
                 Console.WriteLine($"Role: {member.GetRole()}");
                 Console.WriteLine($"Anual bonus: {member.CalculateAnnualBonus()}");
+                Console.WriteLine("//////////////////////");
+            }
+        }
+
+        static void GetStudentInfo(List<Student> list)
+        {
+            foreach (var student in list)
+            {
+                Console.WriteLine("Student info:");
+                Console.WriteLine($"First name: {student.FirstName}");
+                Console.WriteLine($"GPA: {student.GPA}");
+                Console.WriteLine($"Academic standing: {student.GetAcademicStanding()}");
                 Console.WriteLine("//////////////////////");
             }
         }
